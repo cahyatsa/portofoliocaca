@@ -3,125 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | [Nama Kamu]</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Portfolio | [Nama Kamu]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #1a1a1a;
-            --accent-color: #555555;
-            --line-color: #eeeeee;
+            --bg-dark: #0a0a0a;
+            --accent-color: #d4af37; /* Gold elegan */
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Background Glow Effect */
+        .glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% -20%, #1e1e1e, transparent);
+            z-index: -1;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 80px 40px;
+            padding: 100px 30px;
         }
 
-        header {
-            margin-bottom: 60px;
+        /* Typography */
+        .role-tag {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 500;
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: -2px;
         }
 
-        .sub-headline {
-            font-size: 1.1rem;
-            color: var(--accent-color);
+        .hero-desc {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 60px;
             font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 3px;
         }
 
-        .content-section {
-            margin-bottom: 50px;
-            animation: fadeIn 1.5s ease;
+        /* Paragraf Section */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 60px;
         }
 
-        p {
-            font-size: 1.15rem;
-            font-weight: 400;
-            margin-bottom: 25px;
-            text-align: justify;
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 30px;
         }
 
-        .divider {
-            height: 1px;
-            background-color: var(--line-color);
-            margin: 40px 0;
+        .about-text p strong {
+            color: var(--text-main);
+            font-weight: 500;
         }
 
-        .contact-links a {
-            color: var(--text-color);
+        /* Contact Section */
+        .contact-box {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-mail {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--text-main);
+            color: var(--bg-dark);
             text-decoration: none;
+            border-radius: 50px;
             font-weight: 600;
-            margin-right: 20px;
-            border-bottom: 1px solid var(--text-color);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
-        .contact-links a:hover {
-            color: var(--accent-color);
-            border-bottom: 1px solid var(--accent-color);
+        .btn-mail:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-color);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        footer {
+            margin-top: 100px;
+            padding-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        .reveal {
+            animation: revealUp 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            .container { padding: 40px 25px; }
+        @media (max-width: 768px) {
+            .about-section { grid-template-columns: 1fr; }
+            h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <div class="glow"></div>
+
     <div class="container">
-        <header>
-            <p class="sub-headline">[Role Kamu, misal: Software Engineer]</p>
-            <h1>[Nama Lengkap Kamu]</h1>
-        </header>
+        <span class="role-tag reveal">[Role Kamu / Misal: Digital Architect]</span>
+        <h1 class="reveal">Membangun<br>Pengalaman Digital.</h1>
+        
+        <p class="hero-desc reveal">
+            Saya <strong>[Nama Kamu]</strong>, seorang pengembang yang percaya bahwa koding bukan hanya soal logika, melainkan seni menciptakan solusi yang intuitif dan berdampak luas.
+        </p>
 
-        <section class="content-section">
-            <p>
-                Halo, saya <strong>[Nama Kamu]</strong>. Saya adalah seorang profesional yang mendedikasikan diri pada persimpangan antara fungsionalitas teknis dan estetika desain. Di dunia yang semakin kompleks ini, fokus utama saya adalah menyederhanakan interaksi manusia dengan teknologi melalui baris kode yang bersih dan solusi digital yang intuitif. Saya percaya bahwa sebuah karya digital yang hebat tidak hanya harus bekerja dengan sempurna, tetapi juga harus memberikan pengalaman yang bermakna bagi setiap penggunanya.
-            </p>
+        <div class="about-section reveal">
+            <div class="about-text">
+                <p>
+                    Perjalanan saya dalam dunia teknologi bermula dari satu visi sederhana: <strong>menyederhanakan kompleksitas.</strong> Melalui setiap proyek, saya berusaha menggabungkan struktur kode yang tangguh dengan antarmuka yang elegan, memastikan setiap barisnya memberikan nilai nyata bagi pengguna akhir.
+                </p>
+            </div>
+            <div class="about-text">
+                <p>
+                    Saya tidak hanya membangun produk; saya membangun masa depan digital yang berkelanjutan. Dengan dedikasi tinggi terhadap detail dan haus akan inovasi, saya selalu siap berkolaborasi untuk mewujudkan ide-ide besar Anda menjadi kenyataan yang fungsional.
+                </p>
+            </div>
+        </div>
 
-            <p>
-                Perjalanan saya dalam dunia teknologi berakar dari rasa ingin tahu yang mendalam tentang bagaimana sebuah gagasan abstrak dapat ditransformasikan menjadi produk yang nyata dan skalabel. Dalam setiap proyek yang saya tangani, saya selalu menerapkan prinsip presisi dan efisiensi. Saya tidak hanya menulis kode untuk hari ini; saya membangun arsitektur yang siap menghadapi tantangan masa depan. Bagi saya, detail terkecil dalam sebuah sistem memiliki peran besar dalam menciptakan harmoni secara keseluruhan.
-            </p>
-
-            <p>
-                Sebagai seorang pembelajar seumur hidup, saya terus mengeksplorasi batas-batas teknologi terbaru untuk memastikan bahwa setiap solusi yang saya tawarkan tetap relevan di industri yang bergerak sangat cepat. Saya sangat menghargai kolaborasi yang jujur dan komunikasi yang transparan. Inovasi terbaik lahir ketika beragam perspektif bertemu dan bekerja sama untuk mencapai satu visi yang kuat.
-            </p>
-        </section>
-
-        <div class="divider"></div>
+        <div class="contact-box reveal">
+            <h2>Punya proyek menarik?</h2>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">Mari kita bicara tentang bagaimana saya bisa membantu tim Anda.</p>
+            <a href="mailto:emailanda@gmail.com" class="btn-mail">Kirim Pesan</a>
+        </div>
 
         <footer>
-            <p style="font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.3rem;">Mari bangun sesuatu yang luar biasa bersama.</p>
-            <div class="contact-links">
-                <a href="mailto:emailkamu@gmail.com">Email</a>
-                <a href="https://linkedin.com/in/username">LinkedIn</a>
-                <a href="https://github.com/username">GitHub</a>
-            </div>
+            <div>© 2026 [NAMA KAMU]</div>
+            <div>DEVELOPED WITH PRECISION</div>
         </footer>
     </div>
 
