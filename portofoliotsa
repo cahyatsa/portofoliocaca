@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | [Nama Kamu]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #555555;
+            --line-color: #eeeeee;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .sub-headline {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        p {
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--line-color);
+            margin: 40px 0;
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 20px;
+            border-bottom: 1px solid var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .container { padding: 40px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <p class="sub-headline">[Role Kamu, misal: Software Engineer]</p>
+            <h1>[Nama Lengkap Kamu]</h1>
+        </header>
+
+        <section class="content-section">
+            <p>
+                Halo, saya <strong>[Nama Kamu]</strong>. Saya adalah seorang profesional yang mendedikasikan diri pada persimpangan antara fungsionalitas teknis dan estetika desain. Di dunia yang semakin kompleks ini, fokus utama saya adalah menyederhanakan interaksi manusia dengan teknologi melalui baris kode yang bersih dan solusi digital yang intuitif. Saya percaya bahwa sebuah karya digital yang hebat tidak hanya harus bekerja dengan sempurna, tetapi juga harus memberikan pengalaman yang bermakna bagi setiap penggunanya.
+            </p>
+
+            <p>
+                Perjalanan saya dalam dunia teknologi berakar dari rasa ingin tahu yang mendalam tentang bagaimana sebuah gagasan abstrak dapat ditransformasikan menjadi produk yang nyata dan skalabel. Dalam setiap proyek yang saya tangani, saya selalu menerapkan prinsip presisi dan efisiensi. Saya tidak hanya menulis kode untuk hari ini; saya membangun arsitektur yang siap menghadapi tantangan masa depan. Bagi saya, detail terkecil dalam sebuah sistem memiliki peran besar dalam menciptakan harmoni secara keseluruhan.
+            </p>
+
+            <p>
+                Sebagai seorang pembelajar seumur hidup, saya terus mengeksplorasi batas-batas teknologi terbaru untuk memastikan bahwa setiap solusi yang saya tawarkan tetap relevan di industri yang bergerak sangat cepat. Saya sangat menghargai kolaborasi yang jujur dan komunikasi yang transparan. Inovasi terbaik lahir ketika beragam perspektif bertemu dan bekerja sama untuk mencapai satu visi yang kuat.
+            </p>
+        </section>
+
+        <div class="divider"></div>
+
+        <footer>
+            <p style="font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.3rem;">Mari bangun sesuatu yang luar biasa bersama.</p>
+            <div class="contact-links">
+                <a href="mailto:emailkamu@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/username">LinkedIn</a>
+                <a href="https://github.com/username">GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
